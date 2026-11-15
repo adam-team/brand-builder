@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>Логотип</title>
+<style>html,body{margin:0;background:transparent}#v{display:block}</style></head>
+<body>
+<div id="v"></div>
+<script src="brand.js"></script>
+<script>
+// Одна версия логотипа на страницу для PNG: logo.html?p=<id>&k=<вариант>. Список вариантов — в scripts/render.sh
+Brand.load().then((B) => {
+  const C = B.C, k = new URLSearchParams(location.search).get('k') || 'mark_accent'
+  const M = {
+    mark_accent: () => B.mark({ fg: C.accent, size: 1200 }),
+    mark_white: () => B.mark({ fg: '#FFFFFF', size: 1200 }),
+    mark_light: () => B.mark({ fg: C.light_alt, size: 1200 }),
+    mark_dark: () => B.mark({ fg: C.dark, size: 1200 }),
+    app_accent: () => B.mark({ fg: C.on_accent, bg: C.accent, size: 1200 }),
+    app_dark: () => B.mark({ fg: C.light_alt, bg: C.dark, size: 1200 }),
+    avatar: () => B.mark({ fg: C.on_accent, bg: C.accent, size: 1080, shape: 'circle' }),
+    badge: () => B.badge({ size: 1200 }),
+    badge_on_accent: () => B.badge({ fg: C.on_accent, bg: C.accent, size: 1200 }),
+    lockup: () => B.lockup({ size: 2400 }),
+    lockup_dark: () => B.lockup({ size: 2400, text: C.light_alt }),
+  }
+  document.getElementById('v').innerHTML = M[k]()
+  document.body.dataset.ready = '1'
+})
+</script>
+</body>
+</html>

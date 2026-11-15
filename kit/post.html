@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Карусель</title>
+<link rel="stylesheet" href="kit.css">
+<style>
+  body { display: flex; flex-wrap: wrap; gap: 30px; padding: 30px; }
+  body.single { padding: 0; gap: 0; background: none; display: block; }
+  body.single .slide:not(.show) { display: none; }
+  .content { position: absolute; left: 72px; right: 72px; top: 150px; bottom: 250px; display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; gap: 40px; z-index: 4; }
+  .cover .ph { position: absolute; inset: 0; background-size: cover; }
+  .cover .ph::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 42%, rgba(0,0,0,.9) 78%); }
+  .cover.nophoto .ph::after { display: none; }
+  .cover .content { align-content: end; bottom: 230px; color: #fff; }
+  .cover .h1 { font-size: 96px; }
+  .cover .sub { font: 500 30px var(--mono); display: inline-flex; gap: 14px; align-items: center; opacity: .9; }
+  .cover .sub::before { content: '//'; color: var(--accent-dark); }
+  .pwin .content { align-content: start; top: 140px; }
+  .pwin .shot { height: 560px; background: var(--soft) center 25%/cover; }
+  .stat .big { overflow: hidden; font: var(--dw) 200px/0.9 var(--display); letter-spacing: -.04em; color: var(--accent); display: flex; align-items: center; gap: 26px; white-space: nowrap; }
+  .t-dark.stat .big { color: var(--accent-dark); }
+  .stat .big > span { flex: none; }
+  .stat .from { color: var(--muted); font-size: .6em; text-decoration: line-through; text-decoration-thickness: .05em; }
+  .stat .arr { font-size: .5em; color: currentColor; }
+  .bubble { max-width: 86%; padding: 26px 30px; border-radius: 28px; font: 500 30px/1.45 var(--body); }
+  .bubble.me { justify-self: end; background: var(--accent); color: var(--on-accent); border-bottom-right-radius: 8px; }
+  .bubble.ai { background: var(--surface); color: var(--dark); border-bottom-left-radius: 8px; box-shadow: 0 20px 40px -28px rgba(0,0,0,.5); }
+  .t-dark .bubble.ai { background: var(--dark-surface); color: var(--light-alt); }
+  .bubble.ai .who { font: 700 22px var(--mono); color: var(--accent); display: block; margin-bottom: 8px; }
+  .cards { display: grid; gap: 22px; }
+  .cards .win .in { display: grid; grid-template-columns: 1fr auto; gap: 8px 20px; align-items: center; padding: 26px 32px; }
+  .cards .win h4 { font: var(--dw) 34px/1.15 var(--display); letter-spacing: var(--track); }
+  .cards .win p { font: 500 26px/1.4 var(--body); opacity: .75; grid-column: 1; }
+  .cards .win .price { grid-column: 2; grid-row: 1 / span 2; font: 700 26px var(--mono); color: var(--accent); white-space: nowrap; }
+  .pcode .content { align-content: start; top: 140px; gap: 30px; }
+  .pcode .kick { font: 700 26px var(--mono); color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+  .t-dark.pcode .kick { color: var(--accent-dark); }
+  .term { background: var(--dark); color: var(--light-alt); border-radius: var(--r); overflow: hidden; }
+  .t-dark .term { background: var(--dark-surface); }
+  .term .bar { display: flex; gap: 12px; align-items: center; padding: 18px 26px; border-bottom: 1.5px solid rgba(255,255,255,.1); font: 500 22px var(--mono); color: var(--muted); }
+  .term .bar i { width: 14px; height: 14px; border-radius: 50%; background: #4a4442; display: block; } .term .bar i:first-child { background: var(--accent); }
+  .term pre { margin: 0; padding: 28px 34px 34px; font: 500 27px/1.5 var(--mono); white-space: pre-wrap; }
+  .term pre u { text-decoration: none; color: var(--accent-dark); }
+  .cta .content { justify-items: start; }
+  .cta .word { display: inline-block; background: var(--on-accent); color: var(--accent); font: 700 120px var(--mono); padding: 6px 34px; border-radius: var(--r); }
+</style>
+</head>
+<body>
+<script src="brand.js"></script>
+<script>
+Brand.load().then((B) => {
+  const C = B.C, cfg = B.cfg, el = cfg.elements || {}
+  document.body.classList.add('hl-' + (el.highlight || 'pill'))
+  if (el.window === false) document.body.classList.add('no-window')
+  const q = new URLSearchParams(location.search)
+  const list = (B.posts && B.posts.carousels) || []
+  const post = list.find((x) => x.id === q.get('post')) || list[0]
+  if (!post) { document.body.textContent = 'Нет posts.json в проекте'; return }
+  const N = post.slides.length, W = 1080, H = 1350, R = B.routePath(N)
+  const ava = `<i style="background:${C.accent}">${B.mark({ fg: C.on_accent, size: 40 })}</i>`
+  const top = (s, i) => `<div class="topline"><span class="tag">${s.tag || post.tag || ''}</span><span class="num">${String(i + 1).padStart(2, '0')} / ${String(N).padStart(2, '0')}</span></div>`
+  const bot = (i) => `<div class="botline"><span class="who">${ava}${cfg.handle || ''}</span><span class="next">${i < N - 1 ? (cfg.swipe || 'листай →') : ''}</span></div>`
+  const T = {
+    cover: (s) => `<div class="ph" style="background-image:${s.photo ? `url(${B.photo(s.photo)})` : 'none'};background-position:${s.pos || 'center 20%'}"></div><div class="content"><div class="h1">${s.title}</div>${s.sub ? `<div class="sub">${s.sub}</div>` : ''}</div>`,
+    text: (s) => `<div class="content"><div class="h2">${s.title}</div>${s.body ? `<div class="lead">${s.body}</div>` : ''}${s.prompt ? `<div class="prompt">${s.prompt}</div>` : ''}${s.chips ? `<div style="display:flex;flex-wrap:wrap;gap:14px">${s.chips.map((c, k) => `<span class="chip ${k ? '' : 'fill'}">${c}</span>`).join('')}</div>` : ''}</div>`,
+    steps: (s) => `<div class="content"><div class="h2">${s.title}</div><ul class="steps">${s.items.map(([k, b, p], j) => `<li><span class="k ${j % 2 ? 'o' : ''}">${k}</span><div><b>${b}</b>${p ? `<p>${p}</p>` : ''}</div></li>`).join('')}</ul></div>`,
+    stat: (s) => `<div class="content"><div class="mono muted" style="font-size:28px">${s.kicker || ''}</div><div class="big">${s.from ? `<span class="from">${s.from}</span><span class="arr">→</span>` : ''}<span>${s.to}</span></div><div class="h3">${s.label}</div>${s.note ? `<div class="body muted">${s.note}</div>` : ''}</div>`,
+    pwin: (s) => `<div class="content"><div class="win"><div class="bar"><i></i><i></i><i></i><span>${s.file || 'app'}</span></div><div class="shot" style="background-image:${s.photo ? `url(${B.photo(s.photo)})` : 'none'}"></div></div><div class="h2" style="font-size:64px">${s.title}</div>${s.body ? `<div class="body">${s.body}</div>` : ''}</div>`,
+    chat: (s) => `<div class="content"><div class="h2" style="font-size:64px">${s.title}</div>${s.msgs.map(([w, t]) => `<div class="bubble ${w}">${w === 'ai' ? `<span class="who">${s.aiName || 'AI'}</span>` : ''}${t}</div>`).join('')}</div>`,
+    cards: (s) => `<div class="content"><div class="h2" style="font-size:66px">${s.title}</div><div class="cards">${s.cards.map(([h, p, pr]) => `<div class="win"><div class="in"><h4>${h}</h4>${pr ? `<span class="price">${pr}</span>` : ''}<p>${p}</p></div></div>`).join('')}</div></div>`,
+    pcode: (s) => `<div class="content"><div class="kick">${s.kick || ''}</div><div class="h2" style="font-size:68px">${s.title}</div><div class="term"><div class="bar"><i></i><i></i><i></i><span>${s.file || 'prompt.txt'}</span></div><pre>${s.code}</pre></div>${s.note ? `<div class="body">${s.note}</div>` : ''}</div>`,
+    cta: (s) => `<div class="content"><div data-mark style="width:150px"></div><div class="h2">${s.title}</div><div class="word">${s.word || cfg.cta_word || ''}</div><div class="lead">${s.sub || ''}</div></div>`,
+  }
+  post.slides.forEach((s, i) => {
+    const theme = s.type === 'cover' ? 'cover t-dark' + (s.photo ? '' : ' nophoto') : s.type === 'cta' ? 'cta t-accent' : `${s.type} t-${s.theme || 'light'}`
+    const sec = document.createElement('section')
+    sec.className = 'slide ' + theme; sec.id = 's' + (i + 1)
+    const dark = /t-dark|t-accent/.test(theme)
+    const lineCol = s.type === 'cta' ? C.on_accent : dark ? C.accent_on_dark : C.accent
+    const pat = s.type === 'cover' && s.photo ? 'none' : B.pattern({ fg: dark ? '#FFFFFF' : C.dark, opacity: s.type === 'cta' ? 0.18 : 0.12 })
+    const route = el.route === false ? '' : `<svg class="route" viewBox="${i * W} 0 ${W} ${H}" width="${W}" height="${H}"><path d="${R.d}" fill="none" stroke="${lineCol}" stroke-width="6" stroke-linecap="round"/>` +
+      (i === 0 ? `<circle cx="40" cy="${R.y}" r="12" fill="${lineCol}"/>` : '') +
+      (i === N - 1 ? `<circle cx="${R.end[0]}" cy="${R.end[1]}" r="20" fill="none" stroke="${lineCol}" stroke-width="6"/><circle cx="${R.end[0]}" cy="${R.end[1]}" r="7" fill="${lineCol}"/>` : '') + '</svg>'
+    sec.innerHTML = `<div class="grid-bg" style="background:${pat}"></div>` + top(s, i) + T[s.type](s) + bot(i) + route
+    if (s.type === 'cover' && !s.photo) sec.querySelector('.ph').style.background = `${B.pattern({ fg: '#FFFFFF', opacity: .1 })}, radial-gradient(120% 80% at 70% 20%, ${C.accent_deep}, ${C.dark} 65%)`
+    document.body.appendChild(sec)
+  })
+  document.querySelectorAll('[data-mark]').forEach((x) => { x.innerHTML = B.mark({ fg: C.on_accent, size: 150 }) })
+  const fit = () => document.querySelectorAll('.h1, .h2, .big').forEach((x) => { let fs = parseFloat(getComputedStyle(x).fontSize); while ((x.scrollWidth > x.clientWidth + 2 || [...x.children].reduce((a, c) => a + c.getBoundingClientRect().width, 0) > x.clientWidth) && fs > 40) { fs -= 4; x.style.fontSize = fs + 'px' } })
+  fit(); setTimeout(fit, 1500)
+  const one = q.get('s'); if (one) { document.body.classList.add('single'); document.getElementById(one).classList.add('show') }
+  setTimeout(() => { document.body.dataset.ready = '1' }, 1600)
+})
+</script>
+</body>
+</html>

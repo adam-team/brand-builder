@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140" width="1200" height="280">
+  <g transform="translate(10 14) scale(.475)"><g color="#B08D4A" style="color:#B08D4A"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M40 220V110a80 80 0 0 1 160 0v110" stroke-width="7"/>
+  <path d="M28 220h184" stroke-width="7"/>
+  <path d="M70 190l28-80 28 80M80 162h36" stroke-width="7"/>
+  <path d="M140 110v80h24a20 20 0 0 0 0-40h-24h20a20 20 0 0 0 0-40z" stroke-width="7"/>
+  <circle cx="120" cy="56" r="6" fill="currentColor" stroke="none"/>
+</g></g></g>
+  <text x="150" y="70" font-family="Cormorant Garamond, Cormorant Garamond, Arial, sans-serif" font-weight="600" font-size="38" letter-spacing="-0.5" fill="#13221B">Aruzhan Bekova</text>
+  <text x="152" y="106" font-family="PT Mono, PT Mono, monospace" font-weight="500" font-size="17" letter-spacing="1" fill="#8B8574">// real estate · Almaty</text>
+</svg>

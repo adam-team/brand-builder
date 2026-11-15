@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="800" height="800">
+  <circle cx="160" cy="160" r="156" fill="#FFFFFF"/>
+  <circle cx="160" cy="160" r="150" fill="none" stroke="#B08D4A" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+  <defs><path id="bptt1cz" d="M160 160m-120 0a120 120 0 1 1 240 0a120 120 0 1 1 -240 0"/></defs>
+  <text font-family="PT Mono, PT Mono, monospace" font-weight="700" font-size="17" fill="#B08D4A"><textPath href="#bptt1cz" textLength="748" lengthAdjust="spacing">ARUZHAN BEKOVA · REAL ESTATE · ALMATY · </textPath></text>
+  <g transform="translate(103 103) scale(.475)"><g color="#B08D4A" style="color:#B08D4A"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M40 220V110a80 80 0 0 1 160 0v110" stroke-width="7"/>
+  <path d="M28 220h184" stroke-width="7"/>
+  <path d="M70 190l28-80 28 80M80 162h36" stroke-width="7"/>
+  <path d="M140 110v80h24a20 20 0 0 0 0-40h-24h20a20 20 0 0 0 0-40z" stroke-width="7"/>
+  <circle cx="120" cy="56" r="6" fill="currentColor" stroke="none"/>
+</g></g></g>
+</svg>

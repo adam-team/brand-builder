@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Брендбук</title>
+<link rel="stylesheet" href="kit.css">
+<style>
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  @page { size: 340mm 480mm; margin: 0; }
+  body { background: var(--light); color: var(--dark); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  section.bb { padding: 90px 0; border-bottom: 1px solid rgba(0,0,0,.08); break-inside: avoid; }
+  section.dark { background: var(--dark); color: var(--light-alt); border: 0; }
+  .no { font: 600 15px var(--mono); color: var(--accent); margin-bottom: 14px; }
+  .dark .no { color: var(--accent-dark); }
+  .no::before { content: '// '; }
+  h2.t { font: var(--dw) 58px/1.04 var(--display); letter-spacing: var(--track); text-transform: var(--case); margin-bottom: 18px; }
+  h3 { font: var(--dw) 24px var(--display); letter-spacing: var(--track); margin: 36px 0 14px; }
+  p.lead { font-size: 20px; max-width: 820px; opacity: .85; }
+  .grid { display: grid; gap: 18px; }
+  .g2 { grid-template-columns: repeat(2, 1fr); } .g3 { grid-template-columns: repeat(3, 1fr); } .g4 { grid-template-columns: repeat(4, 1fr); } .g6 { grid-template-columns: repeat(6, 1fr); } .g8 { grid-template-columns: repeat(8, 1fr); }
+  .box { background: var(--surface); color: var(--dark); border-radius: var(--r2); padding: 26px; }
+  .dark .box { background: var(--dark-surface); color: var(--light-alt); }
+  .center { display: grid; place-items: center; gap: 8px; }
+  img.full { width: 100%; display: block; border-radius: 12px; }
+  .cap { font-size: 14px; color: var(--muted); }
+  ul.rules { padding-left: 20px; display: grid; gap: 6px; }
+  .cover { min-height: 880px; background: var(--dark); color: var(--light-alt); display: grid; align-content: center; position: relative; overflow: hidden; }
+  .cover .in { display: grid; gap: 28px; padding: 60px 0; position: relative; }
+  .cover h1 { font: var(--dw) 104px/0.98 var(--display); letter-spacing: var(--track); text-transform: var(--case); }
+  .cover .sub { font: 500 18px var(--mono); color: var(--muted); }
+  .toc { display: flex; flex-wrap: wrap; gap: 10px; }
+  .toc a { color: var(--light-alt); text-decoration: none; border: 1px solid rgba(255,255,255,.25); border-radius: 12px; padding: 7px 14px; font: 500 14px var(--mono); }
+  .sw { border-radius: var(--r2); overflow: hidden; background: #fff; border: 1px solid rgba(0,0,0,.06); }
+  .sw .c { height: 130px; display: flex; align-items: flex-end; padding: 14px; font: 600 15px var(--mono); }
+  .sw .d { padding: 14px 16px; font-size: 14px; line-height: 1.45; color: #333; } .sw .d b { display: block; font-size: 16px; color: #111; }
+  .pair { border-radius: 16px; padding: 22px; font: var(--dw) 22px var(--display); position: relative; min-height: 104px; }
+  .pair small { display: block; font: 600 13px var(--mono); margin-top: 8px; opacity: .85; }
+  .font-row { display: grid; grid-template-columns: 230px 1fr; gap: 26px; padding: 28px 0; border-top: 1px solid rgba(0,0,0,.08); align-items: baseline; }
+  .font-row .meta b { display: block; font-size: 20px; } .font-row .meta span { font-size: 14px; color: var(--muted); }
+  .spec { font-size: 15px; opacity: .8; margin-top: 8px; }
+  @media (max-width: 900px) { .g3, .g4, .g6, .g8 { grid-template-columns: repeat(2, 1fr); } .g2, .font-row { grid-template-columns: 1fr; } .cover h1 { font-size: 56px; } h2.t { font-size: 40px; } }
+</style>
+</head>
+<body>
+<script src="brand.js"></script>
+<script>
+Brand.load().then((B) => {
+  const C = B.C, F = B.F, cfg = B.cfg, d = B.base + 'dist/'
+  const I = cfg.idea || {}, E = cfg.elements || {}
+  // Контраст по WCAG: для таблицы «можно / нельзя» считаем сами, а не на глаз
+  const lum = (h) => { const v = [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255).map((c) => c <= .03928 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4); return .2126 * v[0] + .7152 * v[1] + .0722 * v[2] }
+  const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + .05) / (y + .05) }
+  const rgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16)).join(', ')
+  const NAMES = cfg.color_names || [['accent', 'Акцент', 'кнопки, плашки, цифры'], ['dark', 'Тёмный', 'тёмный фон, заголовки'], ['light', 'Светлый', 'основной фон'], ['muted', 'Серый', 'подписи']]
+  const sw = NAMES.map(([k, n, u]) => `<div class="sw"><div class="c" style="background:${C[k]};color:${lum(C[k]) > .4 ? '#111' : '#fff'}">${C[k]}</div><div class="d"><b>${n}</b>RGB ${rgb(C[k])}<br>${u}</div></div>`).join('')
+  const PAIRS = [['light_alt', 'dark'], ['dark', 'light'], ['on_accent', 'accent'], ['accent', 'surface'], ['dark', 'accent'], ['muted', 'soft'], ['accent_deep', 'dark'], ['muted', 'light']]
+  const pairs = PAIRS.map(([fg, bg]) => { const r = ratio(C[fg], C[bg]); const ok = r >= 4.5 ? '✓ текст' : r >= 3 ? '≈ только крупно' : '✕ не читается'
+    return `<div class="pair" style="background:${C[bg]};color:${C[fg]}">Aa Әә Ққ<small>${ok} · ${r.toFixed(1)}:1</small></div>` }).join('')
+  const sample = cfg.font_sample || { ru: 'Съешь же ещё этих мягких булок', kk: 'Әлем ғажап, қаң ұшқыр өрік үй һәм ін', en: 'Quick brown fox jumps' }
+  const fontRow = (x, role, css) => x ? `<div class="font-row"><div class="meta"><b>${x.family}</b><span>${role}${x.kk && x.kk !== x.family ? ` · казахские буквы из ${x.kk}` : ''}</span></div><div><div style="${css}">${sample.ru}<br>${sample.kk}<br>${sample.en} 0123456789</div></div></div>` : ''
+  const strip = (id, n) => `<div class="grid g${n > 6 ? 8 : 6}">${Array.from({ length: n }, (_, i) => `<img class="full" src="${d}posts/${id}/${String(i + 1).padStart(2, '0')}.png">`).join('')}</div>`
+  const car = ((B.posts || {}).carousels || []).slice(0, 2)
+  const hl = (cfg.highlights || []).length || 6
+
+  document.body.insertAdjacentHTML('beforeend', `
+  <header class="cover" style="background-image:${B.pattern({ fg: '#FFFFFF', opacity: .08 })}">
+    <div class="wrap in">
+      ${B.mark({ fg: C.accent_on_dark, size: 120 })}
+      <div class="sub">// брендбук · ${cfg.version || 'v1'} · ${new Date().getFullYear()}</div>
+      <h1>${cfg.name}<br><span style="color:var(--accent-dark)">${I.cover || cfg.tagline || ''}</span></h1>
+      <p class="lead">${I.text || ''}</p>
+      <nav class="toc"><a href="#idea">01 идея</a><a href="#logo">02 знак</a><a href="#color">03 цвета</a><a href="#type">04 шрифты</a><a href="#el">05 элементы</a><a href="#posts">06 карусели</a><a href="#reels">07 рилс · сторис</a><a href="#st">08 стикеры</a><a href="#print">09 печать</a><a href="#voice">10 тексты</a><a href="#check">11 чек-лист</a></nav>
+    </div>
+  </header>
+  <section class="bb" id="idea"><div class="wrap">
+    <div class="no">01 · идея</div>
+    <h2 class="t">${I.title || ''}<br><span class="ac">${I.accent || ''}</span></h2>
+    <p class="lead">${I.text || ''}</p>
+    <div class="grid g3" style="margin-top:30px">${(I.pillars || []).map(([h, t]) => `<div class="box"><h3 style="margin-top:0">${h}</h3>${t}</div>`).join('')}</div>
+  </div></section>
+  <section class="bb" id="logo"><div class="wrap">
+    <div class="no">02 · знак и логотип</div>
+    <h2 class="t">${cfg.mark_title || 'Знак'}</h2>
+    <div class="grid g2" style="align-items:center;margin-top:20px">
+      <div class="box center" style="padding:50px">${B.mark({ size: 280 })}</div>
+      <div>${(cfg.mark_story || []).map(([b, t]) => `<p style="margin-top:12px"><b>${b}</b> ${t}</p>`).join('')}</div>
+    </div>
+    <h3>Версии</h3>
+    <div class="grid g4">
+      <div class="box center">${B.mark({ size: 140 })}<div class="cap">основной</div></div>
+      <div class="box center" style="background:var(--accent)">${B.mark({ fg: C.on_accent, size: 140 })}<div class="cap" style="color:var(--on-accent)">на акценте</div></div>
+      <div class="box center" style="background:var(--dark)">${B.mark({ fg: C.light_alt, size: 140 })}<div class="cap">на тёмном</div></div>
+      <div class="box center">${B.mark({ fg: C.on_accent, bg: C.accent, size: 140 })}<div class="cap">иконка / аватар</div></div>
+    </div>
+    <div class="grid g2" style="margin-top:18px"><div class="box center">${B.lockup({ size: 500 })}</div><div class="box center" style="background:var(--dark)">${B.lockup({ size: 500, text: C.light_alt })}</div></div>
+    <div class="grid g3" style="margin-top:18px">
+      <div class="box center">${B.badge({ size: 240 })}</div>
+      <div class="box center" style="background:var(--accent)">${B.badge({ size: 240, fg: C.on_accent, bg: C.accent })}</div>
+      <div class="box"><h3 style="margin-top:0">Правила</h3><ul class="rules">${(cfg.mark_rules || ['Минимальный размер 24 px.', 'Цвета только из палитры.', 'Нельзя поворачивать, растягивать, добавлять тени.']).map((x) => `<li>${x}</li>`).join('')}</ul></div>
+    </div>
+  </div></section>
+  <section class="bb" id="color"><div class="wrap">
+    <div class="no">03 · цвета</div>
+    <h2 class="t">${cfg.color_title || 'Палитра'}</h2>
+    <p class="lead">${cfg.color_ratio || ''}</p>
+    <div class="grid g4" style="margin-top:28px">${sw}</div>
+    <h3>Сочетания и контраст (WCAG)</h3>
+    <div class="grid g4">${pairs}</div>
+    <p class="cap" style="margin-top:10px">4,5:1 и выше — любой текст. 3:1 — только крупные заголовки. Ниже — не использовать для текста.</p>
+  </div></section>
+  <section class="bb" id="type"><div class="wrap">
+    <div class="no">04 · шрифты</div>
+    <h2 class="t">Шрифты · <span class="ac">RU · KZ · EN</span></h2>
+    <p class="lead">${cfg.type_note || 'Все шрифты бесплатные (Google Fonts). Казахские буквы проверены по файлам шрифтов: если в основном шрифте их нет, браузер берёт их из запасного.'}</p>
+    ${fontRow(F.display, 'заголовки · ' + F.display.weight, `font:${F.display.weight} 46px/1.15 var(--display);letter-spacing:var(--track)`)}
+    ${fontRow(F.body, 'основной текст', 'font:500 24px/1.45 var(--body)')}
+    ${fontRow(F.mono, 'теги, номера, промпты', 'font:500 22px/1.5 var(--mono)')}
+    ${fontRow(F.script, 'только подписи и цитаты', 'font:italic 500 34px/1.3 var(--script)')}
+  </div></section>
+  <section class="bb dark" id="el"><div class="wrap">
+    <div class="no">05 · фирменные элементы</div>
+    <h2 class="t">Детали, по которым <span class="ac">узнают</span></h2>
+    <div class="grid g3" style="margin-top:26px">${(cfg.signature || []).map(([h, t]) => `<div class="box"><h3 style="margin-top:0">${h}</h3><p class="cap" style="font-size:15px">${t}</p></div>`).join('')}
+      <div class="box"><h3 style="margin-top:0">Узор фона</h3><div style="height:90px;border-radius:12px;background:var(--light);background-image:${B.pattern()}"></div><p class="cap">${E.pattern || 'dots'}</p></div>
+      <div class="box"><h3 style="margin-top:0">Выделение</h3><div class="h3 hl-${E.highlight || 'pill'}" style="font-size:30px">Главное <span class="hl">слово</span></div></div>
+    </div>
+  </div></section>
+  <section class="bb" id="posts"><div class="wrap">
+    <div class="no">06 · карусели</div>
+    <h2 class="t">Карусели <span class="ac">1080 × 1350</span></h2>
+    <p class="lead">Типы слайдов: cover · text · steps · stat · pwin · chat · cards · pcode · cta. Тексты карусели — в posts.json проекта.</p>
+    ${car.map((c) => `<h3>${c.title || c.id}</h3>${strip(c.id, c.slides.length)}`).join('')}
+  </div></section>
+  <section class="bb" id="reels"><div class="wrap">
+    <div class="no">07 · рилс, сторис, актуальные</div>
+    <h2 class="t">Обложки <span class="ac">рилс</span></h2>
+    <p class="lead">1080 × 1920. Текст в средней зоне 1080 × 1440, иначе в сетке профиля он обрежется.</p>
+    <div class="grid g4" style="margin-top:24px">${['r1', 'r2', 'r3', 'st'].map((x) => `<img class="full" src="${d}reels/${x}.png">`).join('')}</div>
+    <h3>Актуальные</h3>
+    <div class="grid g6">${Array.from({ length: hl }, (_, i) => `<img class="full" style="border-radius:50%" src="${d}highlights/hl${i + 1}.png">`).join('')}</div>
+  </div></section>
+  <section class="bb" id="st"><div class="wrap">
+    <div class="no">08 · стикеры</div>
+    <h2 class="t">Стикеры</h2>
+    <img class="full" style="margin-top:20px;background:#fff" src="${d}stickers/stickers.png">
+  </div></section>
+  <section class="bb" id="print"><div class="wrap">
+    <div class="no">09 · печать</div>
+    <h2 class="t">Сертификат и <span class="ac">визитка</span></h2>
+    <img class="full" style="margin-top:20px" src="${d}print/cert.png">
+    <div class="grid g2" style="margin-top:18px"><img class="full" src="${d}print/card-front.png"><img class="full" src="${d}print/card-back.png"></div>
+  </div></section>
+  <section class="bb" id="voice"><div class="wrap">
+    <div class="no">10 · тексты</div>
+    <h2 class="t">Как мы <span class="ac">пишем</span></h2>
+    <div class="grid g3" style="margin-top:20px">${(cfg.voice || []).map(([h, t]) => `<div class="box"><b>${h}</b> ${t}</div>`).join('')}</div>
+  </div></section>
+  <section class="bb" id="check"><div class="wrap">
+    <div class="no">11 · чек-лист</div>
+    <h2 class="t">Перед публикацией</h2>
+    <ul class="rules" style="font-size:19px;margin-top:16px">${(cfg.checklist || []).map((x) => `<li>☐ ${x}</li>`).join('')}</ul>
+    <p class="cap" style="margin-top:20px">Для любого ИИ прикрепляйте файл BRAND_GUIDE.md из папки бренда.</p>
+  </div></section>`)
+  document.body.classList.add('hl-' + (E.highlight || 'pill'))
+  Promise.all([...document.images].map((im) => im.complete ? 1 : new Promise((r) => { im.onload = im.onerror = r }))).then(() => { document.body.dataset.ready = '1' })
+})
+</script>
+</body>
+</html>

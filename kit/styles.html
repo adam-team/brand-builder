@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Библиотека стилей</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #E9E7E3; font-family: 'Inter', sans-serif; padding: 40px; width: 1800px; }
+  h1 { font: 800 44px 'Inter', sans-serif; margin-bottom: 26px; color: #111; }
+  .g { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .card { border-radius: 26px; overflow: hidden; background: #fff; box-shadow: 0 20px 40px -30px rgba(0,0,0,.5); }
+  .top { height: 330px; padding: 34px; position: relative; display: grid; align-content: space-between; }
+  .n { position: absolute; top: 24px; right: 26px; font: 700 26px 'IBM Plex Mono', monospace; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; background: #fff; color: #111; }
+  .h { font-size: 54px; line-height: 1.02; max-width: 88%; }
+  .k { font-size: 23px; }
+  .row { display: flex; gap: 12px; align-items: center; }
+  .btn { padding: 12px 22px; font: 700 20px 'Inter', sans-serif; }
+  .sw { display: flex; height: 46px; } .sw i { flex: 1; display: block; }
+  .meta { padding: 20px 26px 24px; display: grid; gap: 6px; }
+  .meta b { font: 800 24px 'Inter', sans-serif; color: #111; }
+  .meta span { font: 500 17px/1.4 'Inter', sans-serif; color: #555; }
+  .meta em { font: 500 15px 'IBM Plex Mono', monospace; color: #888; font-style: normal; }
+</style>
+</head>
+<body>
+<script>
+// Витрина стилей для выбора на этапе 3: styles.html?g=A (группа) — так рендерятся листы reference/style-previews/styles-A.jpg …
+fetch('../patterns/styles.json').then((r) => r.json()).then(async (S) => {
+  const g = new URLSearchParams(location.search).get('g')
+  const list = g ? S.filter((s) => s.group === g) : S
+  const fams = [...new Set(list.flatMap((s) => [s.fonts.display.family, s.fonts.body.family, s.fonts.display.kk]))]
+  const link = document.createElement('link'); link.rel = 'stylesheet'
+  link.href = 'https://fonts.googleapis.com/css2?' + fams.map((f) => 'family=' + f.replace(/ /g, '+') + ':wght@400;500;700;800;900').join('&') + '&family=Inter:wght@500;700;800&family=IBM+Plex+Mono:wght@500;700&display=swap'
+  document.head.appendChild(link)
+  const card = (s) => { const c = s.colors, f = s.fonts
+    const hfont = `font-family:'${f.display.family}','${f.display.kk}';font-weight:${f.display.weight};letter-spacing:${f.display.tracking}em;text-transform:${f.display.case}`
+    const bfont = `font-family:'${f.body.family}','${f.body.kk}'`
+    const r = s.radius
+    return `<div class="card"><div class="top" style="background:${c.dark};color:${c.light_alt}">
+      <span class="n">${s.n}</span>
+      <div class="h" style="${hfont}">${s.name.replace(/\(.*\)/, '')}</div>
+      <div class="row"><span class="btn" style="background:${c.accent};color:${c.on_accent};border-radius:${r}px">Записаться</span><span class="k" style="${bfont};opacity:.8">Әә Ққ Ңң Өө</span></div></div>
+      <div class="sw">${['accent', 'accent_deep', 'dark', 'dark_surface', 'light', 'light_alt', 'soft', 'muted'].map((k) => `<i style="background:${c[k]}"></i>`).join('')}</div>
+      <div class="meta"><b>${s.name}</b><span>${s.mood}</span><em>${f.display.family} · ${f.body.family} · ${s.niche}</em></div></div>` }
+  const tail = g === 'E' ? `<div class="card"><div class="top" style="background:#fff;color:#111;border:4px dashed #bbb"><span class="n" style="background:#111;color:#fff">25</span><div class="h" style="font-family:Inter;font-weight:800">Свой стиль</div><span class="k">пришли скриншоты, ссылки, фото — соберу палитру и шрифты</span></div><div class="meta"><b>Свой стиль</b><span>по образцам ученика</span></div></div>` : ''
+  document.body.innerHTML = `<h1>${g ? list[0].group_name : 'Все стили'}</h1><div class="g">${list.map(card).join('')}${tail}</div>`
+  await document.fonts.ready
+  document.body.dataset.ready = '1'
+})
+</script>
+</body>
+</html>

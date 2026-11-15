@@ -1,0 +1,1305 @@
+[
+ {
+  "n": 1,
+  "group": "A",
+  "group_name": "Монохром",
+  "name": "Чистый монохром",
+  "mood": "чёрное и белое, ничего лишнего, сила в типографике",
+  "niche": "архитектура, фото, дизайн, IT",
+  "colors": {
+   "accent": "#111111",
+   "accent_on_dark": "#FFFFFF",
+   "accent_deep": "#000000",
+   "on_accent": "#FFFFFF",
+   "dark": "#0A0A0A",
+   "dark_surface": "#1C1C1C",
+   "light": "#FFFFFF",
+   "light_alt": "#F2F2F2",
+   "soft": "#E5E5E5",
+   "surface": "#FFFFFF",
+   "muted": "#8A8A8A"
+  },
+  "fonts": {
+   "display": {
+    "family": "Inter Tight",
+    "weight": 800,
+    "case": "none",
+    "tracking": -0.04,
+    "kk": "Inter Tight"
+   },
+   "body": {
+    "family": "Inter",
+    "weight": 500,
+    "kk": "Inter"
+   },
+   "mono": {
+    "family": "IBM Plex Mono",
+    "weight": 500,
+    "kk": "IBM Plex Mono"
+   }
+  },
+  "radius": 4,
+  "elements": {
+   "pattern": "none",
+   "route": false,
+   "window": false,
+   "highlight": "under"
+  },
+  "signature": [
+   "огромные заголовки на весь слайд",
+   "тонкие линейки-разделители",
+   "номера страниц крупно"
+  ],
+  "look_at": "Apple, Jil Sander, Muji"
+ },
+ {
+  "n": 2,
+  "group": "A",
+  "group_name": "Монохром",
+  "name": "Графит и бумага",
+  "mood": "серая гамма, мягкий контраст, спокойствие",
+  "niche": "психология, коучинг, консалтинг",
+  "colors": {
+   "accent": "#3A3A3A",
+   "accent_on_dark": "#D9D9D9",
+   "accent_deep": "#1F1F1F",
+   "on_accent": "#FFFFFF",
+   "dark": "#1A1A1A",
+   "dark_surface": "#2A2A2A",
+   "light": "#F7F6F3",
+   "light_alt": "#ECEBE7",
+   "soft": "#DCDAD3",
+   "surface": "#FFFFFF",
+   "muted": "#8C8A84"
+  },
+  "fonts": {
+   "display": {
+    "family": "Geologica",
+    "weight": 600,
+    "case": "none",
+    "tracking": -0.02,
+    "kk": "Geologica"
+   },
+   "body": {
+    "family": "Golos Text",
+    "weight": 500,
+    "kk": "Golos Text"
+   },
+   "mono": {
+    "family": "IBM Plex Mono",
+    "weight": 500,
+    "kk": "IBM Plex Mono"
+   }
+  },
+  "radius": 14,
+  "elements": {
+   "pattern": "lines",
+   "route": false,
+   "window": false,
+   "highlight": "under"
+  },
+  "signature": [
+   "линии как в блокноте",
+   "цитаты крупным курсивом",
+   "много воздуха"
+  ],
+  "look_at": "Kinfolk, Aesop"
+ },
+ {
+  "n": 3,
+  "group": "A",
+  "group_name": "Монохром",
+  "name": "Ночной монохром",
+  "mood": "тёмная тема, белый текст, один серебряный оттенок",
+  "niche": "технологии, финансы, мужская аудитория",
+  "colors": {
+   "accent": "#E6E6E6",
+   "accent_on_dark": "#FFFFFF",
+   "accent_deep": "#9A9A9A",
+   "on_accent": "#0B0B0B",
+   "dark": "#0B0B0B",
+   "dark_surface": "#171717",
+   "light": "#F4F4F4",
+   "light_alt": "#1F1F1F",
+   "soft": "#2B2B2B",
+   "surface": "#FFFFFF",
+   "muted": "#7C7C7C"
+  },
+  "fonts": {
+   "display": {
+    "family": "Montserrat",
+    "weight": 800,
+    "case": "uppercase",
+    "tracking": 0.02,
+    "kk": "Montserrat"
+   },
+   "body": {
+    "family": "Inter",
+    "weight": 500,
+    "kk": "Inter"
+   },
+   "mono": {
+    "family": "Roboto Mono",
+    "weight": 500,
+    "kk": "Roboto Mono"
+   }
+  },
+  "radius": 8,
+  "elements": {
+   "pattern": "grid",
+   "route": false,
+   "window": false,
+   "highlight": "color"
+  },
+  "signature": [
+   "тонкая сетка на фоне",
+   "капслок в заголовках",
+   "цифры моно-шрифтом"
+  ],
+  "look_at": "Tesla, Nothing"
+ },
+ {
+  "n": 4,
+  "group": "A",
+  "group_name": "Монохром",
+  "name": "Газета",
+  "mood": "редакционный стиль: колонки, засечки, рубрики",
+  "niche": "эксперты-аналитики, новости, финансы",
+  "colors": {
+   "accent": "#B3261E",
+   "accent_on_dark": "#FF6B5E",
+   "accent_deep": "#7A1712",
+   "on_accent": "#FFFFFF",
+   "dark": "#1A1A1A",
+   "dark_surface": "#2A2A2A",
+   "light": "#F5F1E8",
+   "light_alt": "#EDE7DA",
+   "soft": "#DDD3BF",
+   "surface": "#FFFFFF",
+   "muted": "#7A7267"
+  },
+  "fonts": {
+   "display": {
+    "family": "Playfair Display",
+    "weight": 800,
+    "case": "none",
+    "tracking": -0.02,
+    "kk": "Playfair Display"
+   },
+   "body": {
+    "family": "PT Serif",
+    "weight": 500,
+    "kk": "PT Serif"
+   },
+   "mono": {
+    "family": "PT Mono",
+    "weight": 500,
+    "kk": "PT Mono"
+   }
+  },
+  "radius": 2,
+  "elements": {
+   "pattern": "lines",
+   "route": false,
+   "window": false,
+   "highlight": "color"
+  },
+  "signature": [
+   "рубрика сверху капслоком",
+   "линия под заголовком",
+   "колонки текста"
+  ],
+  "look_at": "The Economist, NYT"
+ },
+ {
+  "n": 5,
+  "group": "B",
+  "group_name": "Дорогой и премиальный",
+  "name": "Старые деньги",
+  "mood": "кремовый, тёмно-зелёный и золото, засечки",
+  "niche": "недвижимость, юристы, бутики, финансы",
+  "colors": {
+   "accent": "#B08D4A",
+   "accent_on_dark": "#D8BF83",
+   "accent_deep": "#11241C",
+   "on_accent": "#13221B",
+   "dark": "#13221B",
+   "dark_surface": "#1E3029",
+   "light": "#F4EFE3",
+   "light_alt": "#EAE2D0",
+   "soft": "#D9CCAE",
+   "surface": "#FFFFFF",
+   "muted": "#8B8574"
+  },
+  "fonts": {
+   "display": {
+    "family": "Cormorant Garamond",
+    "weight": 600,
+    "case": "none",
+    "tracking": -0.01,
+    "kk": "Cormorant Garamond"
+   },
+   "body": {
+    "family": "Lora",
+    "weight": 500,
+    "kk": "Lora"
+   },
+   "mono": {
+    "family": "PT Mono",
+    "weight": 500,
+    "kk": "PT Mono"
+   },
+   "script": {
+    "family": "Cormorant",
+    "italic": true,
+    "kk": "Cormorant"
+   }
+  },
+  "radius": 6,
+  "elements": {
+   "pattern": "none",
+   "route": false,
+   "window": false,
+   "highlight": "color"
+  },
+  "signature": [
+   "тонкая золотая рамка",
+   "монограмма в круге",
+   "широкие поля"
+  ],
+  "look_at": "Ralph Lauren, Loro Piana"
+ },
+ {
+  "n": 6,
+  "group": "B",
+  "group_name": "Дорогой и премиальный",
+  "name": "Чёрное золото",
+  "mood": "чёрный фон и золотой акцент",
+  "niche": "ювелирка, премиум-услуги, коучи с высоким чеком",
+  "colors": {
+   "accent": "#C8A45C",
+   "accent_on_dark": "#E3C47E",
+   "accent_deep": "#8E6F30",
+   "on_accent": "#111111",
+   "dark": "#0E0E0E",
+   "dark_surface": "#1A1A1A",
+   "light": "#F7F3EA",
+   "light_alt": "#EFE7D6",
+   "soft": "#DCCDAA",
+   "surface": "#FFFFFF",
+   "muted": "#8F8670"
+  },
+  "fonts": {
+   "display": {
+    "family": "Prata",
+    "weight": 400,
+    "case": "uppercase",
+    "tracking": 0.06,
+    "kk": "Prata"
+   },
+   "body": {
+    "family": "Raleway",
+    "weight": 500,
+    "kk": "Raleway"
+   },
+   "mono": {
+    "family": "IBM Plex Mono",
+    "weight": 500,
+    "kk": "IBM Plex Mono"
+   },
+   "script": {
+    "family": "Cormorant",
+    "italic": true,
+    "kk": "Cormorant"
+   }
+  },
+  "radius": 2,
+  "elements": {
+   "pattern": "diag",
+   "route": false,
+   "window": false,
+   "highlight": "color"
+  },
+  "signature": [
+   "золотые тонкие линии",
+   "разрядка в заголовках",
+   "фото в арке"
+  ],
+  "look_at": "Cartier, Tom Ford"
+ },
+ {
+  "n": 7,
+  "group": "B",
+  "group_name": "Дорогой и премиальный",
+  "name": "Бургунди",
+  "mood": "винный, пудровый, бархатная глубина",
+  "niche": "beauty, стилисты, женские клубы",
+  "colors": {
+   "accent": "#7B1E3A",
+   "accent_on_dark": "#E07A96",
+   "accent_deep": "#4E1022",
+   "on_accent": "#FFFFFF",
+   "dark": "#24121A",
+   "dark_surface": "#341B25",
+   "light": "#F8F1EF",
+   "light_alt": "#F0E3E0",
+   "soft": "#E3CBC7",
+   "surface": "#FFFFFF",
+   "muted": "#9C8288"
+  },
+  "fonts": {
+   "display": {
+    "family": "Playfair Display",
+    "weight": 700,
+    "case": "none",
+    "tracking": -0.02,
+    "kk": "Playfair Display"
+   },
+   "body": {
+    "family": "Nunito Sans",
+    "weight": 500,
+    "kk": "Nunito Sans"
+   },
+   "mono": {
+    "family": "PT Mono",
+    "weight": 500,
+    "kk": "PT Mono"
+   },
+   "script": {
+    "family": "Cormorant",
+    "italic": true,
+    "kk": "Cormorant"
+   }
+  },
+  "radius": 22,
+  "elements": {
+   "pattern": "none",
+   "route": false,
+   "window": false,
+   "highlight": "pill"
+  },
+  "signature": [
+   "скруглённые фото",
+   "курсивная подпись",
+   "мягкие тени"
+  ],
+  "look_at": "Dior Beauty, Charlotte Tilbury"
+ },
+ {
+  "n": 8,
+  "group": "B",
+  "group_name": "Дорогой и премиальный",
+  "name": "Тихая роскошь",
+  "mood": "бежевый, песочный, кэмел, минимум деталей",
+  "niche": "мода, интерьер, wellness, премиум-коучинг",
+  "colors": {
+   "accent": "#8C6A4A",
+   "accent_on_dark": "#D7B99A",
+   "accent_deep": "#5E4630",
+   "on_accent": "#FFFFFF",
+   "dark": "#2A231D",
+   "dark_surface": "#3A3129",
+   "light": "#F6F1EA",
+   "light_alt": "#EDE4D8",
+   "soft": "#DCCDB9",
+   "surface": "#FFFFFF",
+   "muted": "#9A8E80"
+  },
+  "fonts": {
+   "display": {
+    "family": "Tenor Sans",
+    "weight": 400,
+    "case": "uppercase",
+    "tracking": 0.08,
+    "kk": "Golos Text"
+   },
+   "body": {
+    "family": "Golos Text",
+    "weight": 500,
+    "kk": "Golos Text"
+   },
+   "mono": {
+    "family": "PT Mono",
+    "weight": 500,
+    "kk": "PT Mono"
+   }
+  },
+  "radius": 10,
+  "elements": {
+   "pattern": "none",
+   "route": false,
+   "window": false,
+   "highlight": "under"
+  },
+  "signature": [
+   "разрядка капслоком",
+   "фото с тёплым светом",
+   "одна линия-подчёркивание"
+  ],
+  "look_at": "The Row, Toteme"
+ },
+ {
+  "n": 9,
+  "group": "B",
+  "group_name": "Дорогой и премиальный",
+  "name": "Сапфир",
+  "mood": "глубокий синий и серебро, строгость и доверие",
+  "niche": "финансы, банкинг, консалтинг, B2B",
+  "colors": {
+   "accent": "#1F3A93",
+   "accent_on_dark": "#7EA2FF",
+   "accent_deep": "#122459",
+   "on_accent": "#FFFFFF",
+   "dark": "#0D1530",
+   "dark_surface": "#18224A",
+   "light": "#F3F5FA",
+   "light_alt": "#E6EAF4",
+   "soft": "#CDD5EA",
+   "surface": "#FFFFFF",
+   "muted": "#7D86A0"
+  },
+  "fonts": {
+   "display": {
+    "family": "Montserrat",
+    "weight": 700,
+    "case": "none",
+    "tracking": -0.02,
+    "kk": "Montserrat"
+   },
+   "body": {
+    "family": "Inter",
+    "weight": 500,
+    "kk": "Inter"
+   },
+   "mono": {
+    "family": "IBM Plex Mono",
+    "weight": 500,
+    "kk": "IBM Plex Mono"
+   }
+  },
+  "radius": 12,
+  "elements": {
+   "pattern": "grid",
+   "route": false,
+   "window": false,
+   "highlight": "pill"
+  },
+  "signature": [
+   "сетка как в отчёте",
+   "графики и цифры",
+   "бейдж-печать"
+  ],
+  "look_at": "JP Morgan, Revolut Metal"
+ },
+ {
+  "n": 10,
+  "group": "C",
+  "group_name": "Тёплый и живой",
+  "name": "Терракота",
+  "mood": "глина, песок, оливка, ручная работа",
+  "niche": "керамика, интерьер, психологи, нутрициологи",
+  "colors": {
+   "accent": "#C0603C",
+   "accent_on_dark": "#F0956F",
+   "accent_deep": "#8A3F22",
+   "on_accent": "#FFFFFF",
+   "dark": "#2B1E17",
+   "dark_surface": "#3B2B22",
+   "light": "#F7EFE6",
+   "light_alt": "#EFE2D3",
+   "soft": "#E2CDB5",
+   "surface": "#FFFFFF",
+   "muted": "#9A8574"
+  },
+  "fonts": {
+   "display": {
+    "family": "Geologica",
+    "weight": 700,
+    "case": "none",
+    "tracking": -0.02,
+    "kk": "Geologica"
+   },
+   "body": {
+    "family": "Nunito",
+    "weight": 500,
+    "kk": "Nunito"
+   },
+   "mono": {
+    "family": "PT Mono",
+    "weight": 500,
+    "kk": "PT Mono"
+   }
+  },
+  "radius": 24,
+  "elements": {
+   "pattern": "none",
+   "route": false,
+   "window": false,
+   "highlight": "pill"
+  },
+  "signature": [
+   "скруглённые формы",
+   "фото с зерном",
+   "рукописная стрелка"
+  ],
+  "look_at": "Aesop, Le Labo"
+ },
+ {
+  "n": 11,
+  "group": "C",
+  "group_name": "Тёплый и живой",
+  "name": "Оливковая роща",
+  "mood": "оливка, крем, натуральное",
+  "niche": "здоровье, эко, йога, нутрициология",
+  "colors": {
+   "accent": "#5E6B3A",
+   "accent_on_dark": "#B5C27E",
+   "accent_deep": "#3C4524",
+   "on_accent": "#FFFFFF",
+   "dark": "#1E2316",
+   "dark_surface": "#2C3320",
+   "light": "#F5F3EA",
+   "light_alt": "#ECE8D8",
+   "soft": "#DAD4BC",
+   "surface": "#FFFFFF",
+   "muted": "#8A8A74"
+  },
+  "fonts": {
+   "display": {
+    "family": "Lora",
+    "weight": 700,
+    "case": "none",
+    "tracking": -0.01,
+    "kk": "Lora"
+   },
+   "body": {
+    "family": "Nunito Sans",
+    "weight": 500,
+    "kk": "Nunito Sans"
+   },
+   "mono": {
+    "family": "PT Mono",
+    "weight": 500,
+    "kk": "PT Mono"
+   }
+  },
+  "radius": 20,
+  "elements": {
+   "pattern": "dots",
+   "route": false,
+   "window": false,
+   "highlight": "under"
+  },
+  "signature": [
+   "листья-иконки в линию",
+   "мягкая точечная сетка",
+   "фото природы"
+  ],
+  "look_at": "Patagonia, Rituals"
+ },
+ {
+  "n": 12,
+  "group": "C",
+  "group_name": "Тёплый и живой",
+  "name": "Персик и кофе",
+  "mood": "тёплый персиковый, шоколад, уют",
+  "niche": "кондитеры, кафе, мамы-блогеры",
+  "colors": {
+   "accent": "#E8875B",
+   "accent_on_dark": "#FFB08A",
+   "accent_deep": "#A65532",
+   "on_accent": "#FFFFFF",
+   "dark": "#2E1D16",
+   "dark_surface": "#3E2A20",
+   "light": "#FFF6EF",
+   "light_alt": "#FBE8DA",
+   "soft": "#F2D3BC",
+   "surface": "#FFFFFF",
+   "muted": "#A28976"
+  },
+  "fonts": {
+   "display": {
+    "family": "Rubik",
+    "weight": 700,
+    "case": "none",
+    "tracking": -0.01,
+    "kk": "Rubik"
+   },
+   "body": {
+    "family": "Nunito",
+    "weight": 500,
+    "kk": "Nunito"
+   },
+   "mono": {
+    "family": "PT Mono",
+    "weight": 500,
+    "kk": "PT Mono"
+   }
+  },
+  "radius": 28,
+  "elements": {
+   "pattern": "dots",
+   "route": false,
+   "window": false,
+   "highlight": "pill"
+  },
+  "signature": [
+   "круглые стикеры",
+   "крупные смайл-иконки",
+   "плашки-таблетки"
+  ],
+  "look_at": "Glossier, Starbucks Reserve"
+ },
+ {
+  "n": 13,
+  "group": "C",
+  "group_name": "Тёплый и живой",
+  "name": "Скандинавия",
+  "mood": "светлое дерево, белый, приглушённый синий",
+  "niche": "дети, семья, образование, дом",
+  "colors": {
+   "accent": "#4A6B8A",
+   "accent_on_dark": "#9DBAD5",
+   "accent_deep": "#2F4A63",
+   "on_accent": "#FFFFFF",
+   "dark": "#1C2630",
+   "dark_surface": "#29353F",
+   "light": "#FAF8F4",
+   "light_alt": "#F1EDE6",
+   "soft": "#E2DBD0",
+   "surface": "#FFFFFF",
+   "muted": "#8E949A"
+  },
+  "fonts": {
+   "display": {
+    "family": "Nunito",
+    "weight": 800,
+    "case": "none",
+    "tracking": -0.01,
+    "kk": "Nunito"
+   },
+   "body": {
+    "family": "Nunito Sans",
+    "weight": 500,
+    "kk": "Nunito Sans"
+   },
+   "mono": {
+    "family": "PT Mono",
+    "weight": 500,
+    "kk": "PT Mono"
+   }
+  },
+  "radius": 26,
+  "elements": {
+   "pattern": "none",
+   "route": false,
+   "window": false,
+   "highlight": "under"
+  },
+  "signature": [
+   "много белого",
+   "скруглённые карточки",
+   "простые линейные иконки"
+  ],
+  "look_at": "IKEA, Muuto"
+ },
+ {
+  "n": 14,
+  "group": "D",
+  "group_name": "Яркий и смелый",
+  "name": "Неон на чёрном",
+  "mood": "кислотный лайм на чёрном, энергия",
+  "niche": "IT, AI, геймдев, молодёжь",
+  "colors": {
+   "accent": "#C6FF3D",
+   "accent_on_dark": "#C6FF3D",
+   "accent_deep": "#7FAF00",
+   "on_accent": "#0A0A0A",
+   "dark": "#0A0A0A",
+   "dark_surface": "#161616",
+   "light": "#F4F6EE",
+   "light_alt": "#E9EDDC",
+   "soft": "#D5DCBD",
+   "surface": "#FFFFFF",
+   "muted": "#7E8471"
+  },
+  "fonts": {
+   "display": {
+    "family": "Unbounded",
+    "weight": 800,
+    "case": "uppercase",
+    "tracking": -0.02,
+    "kk": "Geologica"
+   },
+   "body": {
+    "family": "Onest",
+    "weight": 500,
+    "kk": "Onest"
+   },
+   "mono": {
+    "family": "JetBrains Mono",
+    "weight": 500,
+    "kk": "IBM Plex Mono"
+   }
+  },
+  "radius": 6,
+  "elements": {
+   "pattern": "grid",
+   "route": false,
+   "window": true,
+   "highlight": "pill"
+  },
+  "signature": [
+   "терминал и код",
+   "кислотная плашка",
+   "глитч-цифры"
+  ],
+  "look_at": "Linear, Vercel, Raycast"
+ },
+ {
+  "n": 15,
+  "group": "D",
+  "group_name": "Яркий и смелый",
+  "name": "Поп-арт",
+  "mood": "красный, жёлтый, синий, толстые обводки",
+  "niche": "дети, школы, игры, маркетплейсы",
+  "colors": {
+   "accent": "#FF3B30",
+   "accent_on_dark": "#FF7A70",
+   "accent_deep": "#C21F15",
+   "on_accent": "#FFFFFF",
+   "dark": "#111111",
+   "dark_surface": "#222222",
+   "light": "#FFF8E1",
+   "light_alt": "#FFF0B8",
+   "soft": "#FFE07A",
+   "surface": "#FFFFFF",
+   "muted": "#7A7366"
+  },
+  "fonts": {
+   "display": {
+    "family": "Rubik",
+    "weight": 900,
+    "case": "none",
+    "tracking": -0.02,
+    "kk": "Rubik"
+   },
+   "body": {
+    "family": "Nunito",
+    "weight": 500,
+    "kk": "Nunito"
+   },
+   "mono": {
+    "family": "PT Mono",
+    "weight": 500,
+    "kk": "PT Mono"
+   }
+  },
+  "radius": 18,
+  "elements": {
+   "pattern": "dots",
+   "route": false,
+   "window": true,
+   "highlight": "pill"
+  },
+  "signature": [
+   "толстая чёрная обводка",
+   "наклонные стикеры",
+   "точки бен-дей"
+  ],
+  "look_at": "Lego, Duolingo"
+ },
+ {
+  "n": 16,
+  "group": "D",
+  "group_name": "Яркий и смелый",
+  "name": "Электрик",
+  "mood": "электрический синий и белый, современно",
+  "niche": "SaaS, онлайн-школы, маркетологи",
+  "colors": {
+   "accent": "#2F5BFF",
+   "accent_on_dark": "#7D97FF",
+   "accent_deep": "#1A36B3",
+   "on_accent": "#FFFFFF",
+   "dark": "#0B1033",
+   "dark_surface": "#151C4A",
+   "light": "#F5F7FF",
+   "light_alt": "#E8ECFF",
+   "soft": "#CDD6FF",
+   "surface": "#FFFFFF",
+   "muted": "#7880A6"
+  },
+  "fonts": {
+   "display": {
+    "family": "Montserrat",
+    "weight": 800,
+    "case": "none",
+    "tracking": -0.03,
+    "kk": "Montserrat"
+   },
+   "body": {
+    "family": "Inter",
+    "weight": 500,
+    "kk": "Inter"
+   },
+   "mono": {
+    "family": "IBM Plex Mono",
+    "weight": 500,
+    "kk": "IBM Plex Mono"
+   }
+  },
+  "radius": 16,
+  "elements": {
+   "pattern": "grid",
+   "route": false,
+   "window": true,
+   "highlight": "pill"
+  },
+  "signature": [
+   "окна интерфейса",
+   "градиентная подсветка",
+   "иконки в кругах"
+  ],
+  "look_at": "Stripe, Notion, Miro"
+ },
+ {
+  "n": 17,
+  "group": "D",
+  "group_name": "Яркий и смелый",
+  "name": "Фуксия",
+  "mood": "розово-малиновый, дерзко и женственно",
+  "niche": "beauty, женские сообщества, блогеры",
+  "colors": {
+   "accent": "#E0218A",
+   "accent_on_dark": "#FF6BB5",
+   "accent_deep": "#9C0F5D",
+   "on_accent": "#FFFFFF",
+   "dark": "#1E0E18",
+   "dark_surface": "#2E1626",
+   "light": "#FFF3F9",
+   "light_alt": "#FCE3EF",
+   "soft": "#F5C6DD",
+   "surface": "#FFFFFF",
+   "muted": "#A0778C"
+  },
+  "fonts": {
+   "display": {
+    "family": "Montserrat",
+    "weight": 800,
+    "case": "none",
+    "tracking": -0.02,
+    "kk": "Montserrat"
+   },
+   "body": {
+    "family": "Nunito Sans",
+    "weight": 500,
+    "kk": "Nunito Sans"
+   },
+   "mono": {
+    "family": "PT Mono",
+    "weight": 500,
+    "kk": "PT Mono"
+   }
+  },
+  "radius": 26,
+  "elements": {
+   "pattern": "none",
+   "route": false,
+   "window": true,
+   "highlight": "pill"
+  },
+  "signature": [
+   "скруглённые фото",
+   "сердечки и звёзды",
+   "крупный акцентный цвет"
+  ],
+  "look_at": "Barbie, Glossier"
+ },
+ {
+  "n": 18,
+  "group": "D",
+  "group_name": "Яркий и смелый",
+  "name": "Спорт",
+  "mood": "оранжевый и чёрный, движение, наклон",
+  "niche": "фитнес, тренеры, спортклубы",
+  "colors": {
+   "accent": "#FF5A1F",
+   "accent_on_dark": "#FF8A5C",
+   "accent_deep": "#B33A0E",
+   "on_accent": "#FFFFFF",
+   "dark": "#111111",
+   "dark_surface": "#1E1E1E",
+   "light": "#F6F6F4",
+   "light_alt": "#ECECEA",
+   "soft": "#D8D8D4",
+   "surface": "#FFFFFF",
+   "muted": "#7F7F7A"
+  },
+  "fonts": {
+   "display": {
+    "family": "Oswald",
+    "weight": 700,
+    "case": "uppercase",
+    "tracking": 0.0,
+    "kk": "Oswald"
+   },
+   "body": {
+    "family": "Roboto",
+    "weight": 500,
+    "kk": "Roboto"
+   },
+   "mono": {
+    "family": "Roboto Mono",
+    "weight": 500,
+    "kk": "Roboto Mono"
+   }
+  },
+  "radius": 4,
+  "elements": {
+   "pattern": "diag",
+   "route": false,
+   "window": true,
+   "highlight": "pill"
+  },
+  "signature": [
+   "наклонные плашки",
+   "огромные цифры",
+   "диагональные полосы"
+  ],
+  "look_at": "Nike, Gymshark"
+ },
+ {
+  "n": 19,
+  "group": "E",
+  "group_name": "Особенные",
+  "name": "Медицина-чистота",
+  "mood": "белый, мятный, синий, стерильность и забота",
+  "niche": "врачи, клиники, стоматология",
+  "colors": {
+   "accent": "#1B8A7A",
+   "accent_on_dark": "#5FD1BE",
+   "accent_deep": "#0F5C51",
+   "on_accent": "#FFFFFF",
+   "dark": "#0F2A2A",
+   "dark_surface": "#183A3A",
+   "light": "#F5FAF9",
+   "light_alt": "#E6F3F1",
+   "soft": "#C9E5E0",
+   "surface": "#FFFFFF",
+   "muted": "#7A9592"
+  },
+  "fonts": {
+   "display": {
+    "family": "Geologica",
+    "weight": 600,
+    "case": "none",
+    "tracking": -0.02,
+    "kk": "Geologica"
+   },
+   "body": {
+    "family": "Inter",
+    "weight": 500,
+    "kk": "Inter"
+   },
+   "mono": {
+    "family": "IBM Plex Mono",
+    "weight": 500,
+    "kk": "IBM Plex Mono"
+   }
+  },
+  "radius": 18,
+  "elements": {
+   "pattern": "none",
+   "route": false,
+   "window": false,
+   "highlight": "pill"
+  },
+  "signature": [
+   "крестики и плюсы в иконках",
+   "карточки с цифрами исследований",
+   "много белого"
+  ],
+  "look_at": "One Medical, Mayo Clinic"
+ },
+ {
+  "n": 20,
+  "group": "E",
+  "group_name": "Особенные",
+  "name": "Степь",
+  "mood": "современный казахский: охра, бирюза, орнамент линией",
+  "niche": "казахский контент, культура, туризм, мода",
+  "colors": {
+   "accent": "#C7782B",
+   "accent_on_dark": "#F0A65A",
+   "accent_deep": "#8A4E15",
+   "on_accent": "#FFFFFF",
+   "dark": "#1E1A16",
+   "dark_surface": "#2E2721",
+   "light": "#FAF5EC",
+   "light_alt": "#F1E7D4",
+   "soft": "#E2D0AE",
+   "surface": "#FFFFFF",
+   "muted": "#978A74"
+  },
+  "fonts": {
+   "display": {
+    "family": "Montserrat",
+    "weight": 800,
+    "case": "none",
+    "tracking": -0.02,
+    "kk": "Montserrat"
+   },
+   "body": {
+    "family": "Inter Tight",
+    "weight": 500,
+    "kk": "Inter Tight"
+   },
+   "mono": {
+    "family": "IBM Plex Mono",
+    "weight": 500,
+    "kk": "IBM Plex Mono"
+   }
+  },
+  "radius": 14,
+  "elements": {
+   "pattern": "diag",
+   "route": false,
+   "window": false,
+   "highlight": "under"
+  },
+  "signature": [
+   "орнамент қошқар мүйіз одной линией",
+   "бирюзовый второй акцент #2A8C8C",
+   "фото степи и юрты"
+  ],
+  "look_at": "Qazaq Republic, Ahmet Studio"
+ },
+ {
+  "n": 21,
+  "group": "E",
+  "group_name": "Особенные",
+  "name": "Академия",
+  "mood": "тёмно-синий, бордо, засечки, герб-печать",
+  "niche": "университеты, курсы, наставники",
+  "colors": {
+   "accent": "#7A1E2E",
+   "accent_on_dark": "#D46A7E",
+   "accent_deep": "#4F1320",
+   "on_accent": "#FFFFFF",
+   "dark": "#121A2B",
+   "dark_surface": "#1C2640",
+   "light": "#F6F3EC",
+   "light_alt": "#ECE6D8",
+   "soft": "#D9CFBA",
+   "surface": "#FFFFFF",
+   "muted": "#8A8578"
+  },
+  "fonts": {
+   "display": {
+    "family": "Cormorant Garamond",
+    "weight": 700,
+    "case": "none",
+    "tracking": 0.0,
+    "kk": "Cormorant Garamond"
+   },
+   "body": {
+    "family": "PT Serif",
+    "weight": 500,
+    "kk": "PT Serif"
+   },
+   "mono": {
+    "family": "PT Mono",
+    "weight": 500,
+    "kk": "PT Mono"
+   },
+   "script": {
+    "family": "Cormorant",
+    "italic": true,
+    "kk": "Cormorant"
+   }
+  },
+  "radius": 4,
+  "elements": {
+   "pattern": "lines",
+   "route": false,
+   "window": false,
+   "highlight": "color"
+  },
+  "signature": [
+   "печать-эмблема",
+   "нумерация римскими",
+   "рамка с уголками"
+  ],
+  "look_at": "Oxford, Harvard"
+ },
+ {
+  "n": 22,
+  "group": "E",
+  "group_name": "Особенные",
+  "name": "Y2K стекло",
+  "mood": "хром, голография, пастель, 2000-е",
+  "niche": "молодёжь, музыка, бьюти-тренды",
+  "colors": {
+   "accent": "#8A5CFF",
+   "accent_on_dark": "#B79CFF",
+   "accent_deep": "#5A35C4",
+   "on_accent": "#FFFFFF",
+   "dark": "#140F24",
+   "dark_surface": "#221A3A",
+   "light": "#F6F3FF",
+   "light_alt": "#ECE6FF",
+   "soft": "#D9CCFF",
+   "surface": "#FFFFFF",
+   "muted": "#8C84A6"
+  },
+  "fonts": {
+   "display": {
+    "family": "Unbounded",
+    "weight": 700,
+    "case": "none",
+    "tracking": -0.02,
+    "kk": "Geologica"
+   },
+   "body": {
+    "family": "Onest",
+    "weight": 500,
+    "kk": "Onest"
+   },
+   "mono": {
+    "family": "JetBrains Mono",
+    "weight": 500,
+    "kk": "IBM Plex Mono"
+   }
+  },
+  "radius": 30,
+  "elements": {
+   "pattern": "dots",
+   "route": false,
+   "window": false,
+   "highlight": "pill"
+  },
+  "signature": [
+   "стеклянные карточки",
+   "звёздочки-искры",
+   "пастельный градиент"
+  ],
+  "look_at": "Apple Vision, Spotify Wrapped"
+ },
+ {
+  "n": 23,
+  "group": "E",
+  "group_name": "Особенные",
+  "name": "Бохо",
+  "mood": "песочный, ржавый, сухоцветы, свобода",
+  "niche": "путешествия, тренинги, ретриты, астрология",
+  "colors": {
+   "accent": "#B5643C",
+   "accent_on_dark": "#E39A72",
+   "accent_deep": "#7D3F22",
+   "on_accent": "#FFFFFF",
+   "dark": "#2A1F18",
+   "dark_surface": "#3A2C23",
+   "light": "#F8F1E7",
+   "light_alt": "#EFE3D2",
+   "soft": "#E0CDB3",
+   "surface": "#FFFFFF",
+   "muted": "#9A8875"
+  },
+  "fonts": {
+   "display": {
+    "family": "Cormorant Garamond",
+    "weight": 600,
+    "case": "none",
+    "tracking": 0.0,
+    "kk": "Cormorant Garamond"
+   },
+   "body": {
+    "family": "Raleway",
+    "weight": 500,
+    "kk": "Raleway"
+   },
+   "mono": {
+    "family": "PT Mono",
+    "weight": 500,
+    "kk": "PT Mono"
+   },
+   "script": {
+    "family": "Cormorant",
+    "italic": true,
+    "kk": "Cormorant"
+   }
+  },
+  "radius": 40,
+  "elements": {
+   "pattern": "none",
+   "route": false,
+   "window": false,
+   "highlight": "color"
+  },
+  "signature": [
+   "арки в фото",
+   "солнце и луна в линию",
+   "рукописные подписи"
+  ],
+  "look_at": "Free People, Anthropologie"
+ },
+ {
+  "n": 24,
+  "group": "E",
+  "group_name": "Особенные",
+  "name": "ИИ + проекты (Куралай)",
+  "mood": "чёрный, белый, красный, интерфейсы и маршрут",
+  "niche": "ИИ, проджект-менеджмент, вайбкодинг",
+  "colors": {
+   "accent": "#C8102E",
+   "accent_on_dark": "#FF4D63",
+   "accent_deep": "#8E0B20",
+   "on_accent": "#FFFFFF",
+   "dark": "#0E0D0D",
+   "dark_surface": "#1F1C1B",
+   "light": "#F4F2EF",
+   "light_alt": "#F3EDE4",
+   "soft": "#E8D9C2",
+   "surface": "#FFFFFF",
+   "muted": "#A69D92"
+  },
+  "fonts": {
+   "display": {
+    "family": "Unbounded",
+    "weight": 700,
+    "case": "none",
+    "tracking": -0.03,
+    "kk": "Geologica"
+   },
+   "body": {
+    "family": "Manrope",
+    "weight": 500,
+    "kk": "Onest"
+   },
+   "mono": {
+    "family": "JetBrains Mono",
+    "weight": 500,
+    "kk": "IBM Plex Mono"
+   },
+   "script": {
+    "family": "Cormorant",
+    "italic": true,
+    "kk": "Cormorant"
+   }
+  },
+  "radius": 30,
+  "elements": {
+   "pattern": "dots",
+   "route": true,
+   "window": true,
+   "highlight": "pill"
+  },
+  "signature": [
+   "линия-маршрут через карусель",
+   "окна приложений",
+   "промпт-строка",
+   "моно-теги"
+  ],
+  "look_at": "examples/kuralay"
+ }
+]

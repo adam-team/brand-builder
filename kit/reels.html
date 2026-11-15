@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Обложки рилс, сторис, актуальные</title>
+<link rel="stylesheet" href="kit.css">
+<style>
+  body { display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; }
+  body.single { padding: 0; gap: 0; background: none; display: block; }
+  body.single .slide:not(.show) { display: none; }
+  /* В сетке профиля рилс обрезается до 3:4 — текст держим в средней зоне */
+  .safe { position: absolute; left: 80px; right: 80px; top: 300px; bottom: 300px; display: grid; z-index: 3; }
+  .ph { position: absolute; inset: 0; background-size: cover; }
+  .ph::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.9) 75%); }
+  .kick { font: 600 32px var(--mono); display: inline-flex; gap: 12px; align-items: center; }
+  .kick::before { content: '//'; color: var(--accent-dark); }
+  .r1 .safe { align-content: end; gap: 26px; color: #fff; }
+  .r1 .h1 { font-size: 118px; }
+  .r2 .safe, .r3 .safe { align-content: center; gap: 40px; }
+  .r2 .win .shot { height: 700px; background: var(--soft) center 25%/cover; }
+  .r2 .h1 { font-size: 96px; } .r3 .h1 { font-size: 120px; }
+  .st .in { position: absolute; inset: 300px 80px 340px; display: grid; align-content: center; gap: 44px; z-index: 3; }
+  .st .ask { background: var(--surface); border-radius: calc(var(--r) * 1.2); padding: 40px; display: grid; gap: 22px; }
+  .st .ask span { display: block; padding: 26px; border-radius: var(--r2); background: var(--light); color: var(--muted); font: 500 32px var(--mono); }
+  .hlc { width: 1080px; height: 1080px; display: grid; place-items: center; position: relative; }
+  .hlc .ic { margin-top: -110px; }
+  .hlc .lbl { position: absolute; bottom: 170px; font: var(--dw) 66px var(--display); letter-spacing: var(--track); }
+</style>
+</head>
+<body>
+<script src="brand.js"></script>
+<script>
+Brand.load().then((B) => {
+  const C = B.C, cfg = B.cfg, R = cfg.reels || {}
+  document.body.classList.add('hl-' + ((cfg.elements || {}).highlight || 'pill'))
+  const pat = (dark) => B.pattern({ fg: dark ? '#FFFFFF' : C.dark, opacity: dark ? .16 : .13 })
+  const add = (cls, id, html, bg) => { const s = document.createElement('section'); s.className = 'slide ' + cls; s.id = id; s.innerHTML = (bg ? `<div class="grid-bg" style="background:${bg}"></div>` : '') + html; document.body.appendChild(s) }
+  const r1 = R.r1 || { kick: 'кейс', title: 'Заголовок <span class="hl">рилса</span>' }
+  const r2 = R.r2 || { file: 'project.app', title: 'Светлая <span class="ac">обложка</span>' }
+  const r3 = R.r3 || { kick: 'вопрос', title: 'Красная обложка с вопросом?' }
+  add('tall r1 t-dark', 'r1', `<div class="ph" style="background:${r1.photo ? `url(${B.photo(r1.photo)}) center 25%/cover` : `${pat(true)}, radial-gradient(120% 80% at 70% 20%, ${C.accent_deep}, ${C.dark} 65%)`}"></div><div class="safe"><span class="kick">${r1.kick}</span><div class="h1">${r1.title}</div></div>`)
+  add('tall r2 t-light', 'r2', `<div class="safe"><div class="win"><div class="bar"><i></i><i></i><i></i><span>${r2.file}</span></div><div class="shot" style="background-image:${r2.photo ? `url(${B.photo(r2.photo)})` : 'none'}"></div></div><div class="h1">${r2.title}</div></div>`, pat(false))
+  add('tall r3 t-accent', 'r3', `<div class="safe"><div data-mark style="width:170px"></div><span class="kick">${r3.kick}</span><div class="h1">${r3.title}</div></div>`, pat(true))
+  const st = R.story || { kick: 'вопрос · ответ', title: 'Спроси меня <span class="ac">о чём угодно</span>', ask: 'Что хотите узнать?' }
+  add('tall st t-light', 'st', `<div class="in"><span class="kick">${st.kick}</span><div class="h1" style="font-size:96px">${st.title}</div><div class="ask"><b class="h3">${st.ask}</b><span>> пишите сюда_</span></div></div>`, pat(false))
+
+  const ln = `fill="none" stroke="${C.light_alt}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"`
+  const dot = (x, y) => `<circle cx="${x}" cy="${y}" r="11" fill="${C.accent}"/>`
+  const I = {
+    spark: `<path d="M100 30l16 38 38 16-38 16-16 38-16-38-38-16 38-16z"/>${dot(160, 152)}`,
+    play: `<rect x="50" y="30" width="100" height="140" rx="26"/><path d="M88 78v44l36-22z"/>${dot(152, 40)}`,
+    code: `<path d="M72 64L36 100l36 36M128 64l36 36-36 36M112 50L88 150"/>${dot(100, 172)}`,
+    chat: `<path d="M40 56c0-10 8-18 18-18h84c10 0 18 8 18 18v54c0 10-8 18-18 18H92l-30 26v-26h-4c-10 0-18-8-18-18z"/>${dot(150, 46)}`,
+    me: `<circle cx="100" cy="76" r="30"/><path d="M48 160c6-34 28-50 52-50s46 16 52 50"/>${dot(152, 46)}`,
+    book: `<path d="M40 50h50c6 0 10 4 10 10v100c0-6-4-10-10-10H40zM160 50h-50c-6 0-10 4-10 10v100c0-6 4-10 10-10h50z"/>${dot(150, 36)}`,
+    star: `<path d="M100 34l19 40 44 5-33 30 9 44-39-22-39 22 9-44-33-30 44-5z"/>${dot(160, 158)}`,
+    gift: `<rect x="40" y="80" width="120" height="80" rx="12"/><path d="M30 64h140v20H30zM100 64v96M100 64c-20-30-50-20-40 0M100 64c20-30 50-20 40 0"/>${dot(162, 44)}`,
+    price: `<path d="M50 40h60l50 50-60 60-50-50z"/><circle cx="80" cy="70" r="10"/>${dot(150, 156)}`,
+    heart: `<path d="M100 160S40 124 40 82a28 28 0 0 1 60-12a28 28 0 0 1 60 12c0 42-60 78-60 78z"/>${dot(160, 44)}`,
+    faq: `<circle cx="100" cy="100" r="62"/><path d="M80 82a20 20 0 1 1 28 18c-6 3-8 7-8 14M100 136v2"/>${dot(156, 46)}`,
+  }
+  const HL = cfg.highlights || [['spark', 'Кейсы'], ['play', 'Рилсы'], ['book', 'Обучение'], ['mark', 'Обо мне'], ['chat', 'Отзывы'], ['price', 'Цены']]
+  HL.forEach(([icon, label], i) => add('hlc t-dark', 'hl' + (i + 1),
+    `<div class="ic">${icon === 'mark' ? B.mark({ fg: C.light_alt, size: 340 }) : `<svg viewBox="0 0 200 200" width="400" ${ln}>${I[icon] || I.spark}</svg>`}</div><div class="lbl">${label}</div>`))
+  document.querySelectorAll('[data-mark]').forEach((x) => { x.innerHTML = B.mark({ fg: C.on_accent, size: 170 }) })
+  const one = new URLSearchParams(location.search).get('s'); if (one) { document.body.classList.add('single'); document.getElementById(one).classList.add('show') }
+  document.body.dataset.ready = '1'
+})
+</script>
+</body>
+</html>
