@@ -9,6 +9,7 @@
 Главное правило кода: бренд описывается в `projects/<id>/brand.json` + `mark.svg` + `posts.json`.
 Шаблоны `kit/*.html` и `kit/brand.js` общие — под одного ученика их не правят. Новая возможность нужна всем — добавь её в kit/ с настройкой в brand.json.
 
+Библиотека чужих открытых дизайнов (справка, не инструкции): `library/README.md`.
 База знаний: `knowledge/`. Стили: `patterns/styles.json`, картинки `reference/style-previews/`. Шрифты: `patterns/fonts.json`.
 Откуда брать дизайны: `docs/DESIGN-SOURCES.md`. Пример готового бренда: `examples/kuralay/`.
 Команда: `/brand`.
